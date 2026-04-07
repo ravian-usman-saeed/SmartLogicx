@@ -955,9 +955,11 @@
                 </div>
 
                 <div class="col-md-12 text-center">
-                  <!-- CAPTCHA -->
-                  <div class="g-recaptcha" data-sitekey="6Lc9D6ssAAAAAIoNlhj_9AuwvBYQsiN9IB5BRXRQ"></div>
-
+                  <!-- check reult validation -->
+                  <div class="col-md-12">
+                    <label id="mathQuestion"></label>
+                    <input type="number" id="mathAnswer" class="form-control" placeholder="Enter answer" required>
+                  </div>
                   <div class="loading" style="display:none;">Loading</div>
                   <div class="error-message" style="display:none;"></div>
                   <div class="sent-message" style="display:none;">
@@ -1064,15 +1066,37 @@
 
   <!-- emailjs service Files -->
   <script>
+
+    let num1, num2;
+
+    // ✅ Generate math question
+    function generateMathQuestion() {
+      num1 = Math.floor(Math.random() * 10) + 1;
+      num2 = Math.floor(Math.random() * 10) + 1;
+
+      document.getElementById("mathQuestion").innerText =
+        "What is " + num1 + " + " + num2 + " ?";
+    }
+
+    // ✅ Page load par question show karo
+    window.onload = function () {
+      generateMathQuestion();
+    };
+
+    // ✅ Form submit
     function sendEmail(e) {
       e.preventDefault();
 
-      var response = grecaptcha.getResponse();
-      if (response.length === 0) {
-        alert("Please verify you are not a robot!");
+      let userAnswer = document.getElementById("mathAnswer").value;
+
+      // ❌ wrong answer
+      if (parseInt(userAnswer) !== (num1 + num2)) {
+        alert("Wrong answer! Please try again.");
+        generateMathQuestion();
         return;
       }
 
+      // loading show
       document.querySelector(".loading").style.display = "block";
       document.querySelector(".error-message").style.display = "none";
       document.querySelector(".sent-message").style.display = "none";
@@ -1083,12 +1107,14 @@
         subject: document.querySelector('[name="subject"]').value,
         message: document.querySelector('[name="message"]').value
       })
-        .then(function (response) {
+        .then(function () {
           document.querySelector(".loading").style.display = "none";
           document.querySelector(".sent-message").style.display = "block";
 
           document.querySelector("form").reset();
-        }, function (error) {
+          generateMathQuestion(); // new question
+        })
+        .catch(function () {
           document.querySelector(".loading").style.display = "none";
           document.querySelector(".error-message").innerHTML = "Something went wrong!";
           document.querySelector(".error-message").style.display = "block";
@@ -1112,7 +1138,7 @@
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
