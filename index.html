@@ -30,6 +30,180 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+  <style>
+    .hero .carousel-item::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(6, 15, 35, 0.78), rgba(6, 15, 35, 0.48));
+      z-index: 1;
+    }
+
+    .hero .carousel-container {
+      position: relative;
+      z-index: 2;
+      width: min(100%, 1080px);
+      padding: 1rem 0.6rem;
+      border-radius: 16px;
+      background: rgba(0, 0, 0, 0.18);
+      backdrop-filter: blur(3px);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
+    }
+
+    .hero .carousel-container h2,
+    .hero .carousel-container p {
+      text-shadow: 0 3px 12px rgba(0, 0, 0, 0.55);
+    }
+
+    .contact .info-item {
+      border-radius: 14px;
+      padding: 24px 16px;
+      min-height: 168px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    .contact .php-email-form {
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 14px 36px rgba(15, 23, 42, 0.1);
+    }
+
+    .contact .php-email-form .form-control {
+      border-radius: 12px;
+      padding: 12px 14px;
+      min-height: 46px;
+    }
+
+    .contact .php-email-form textarea.form-control {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .contact .math-check {
+      text-align: left;
+      padding: 12px;
+      border-radius: 12px;
+      background: #f8fafc;
+      border: 1px solid #e5e7eb;
+    }
+
+    .contact .math-check label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+    .contact .php-email-form button[type="submit"] {
+      border-radius: 999px;
+      padding: 11px 22px;
+      font-weight: 600;
+      min-height: 44px;
+    }
+
+    @media (max-width: 992px) {
+      .section-title {
+        text-align: center;
+      }
+
+      .portfolio .portfolio-content img,
+      .team .team-member img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero .carousel-container {
+        margin-inline: 8px;
+        padding: 0.8rem 0.6rem;
+      }
+
+      .hero .carousel-container h2 {
+        font-size: 1.6rem;
+        line-height: 1.35;
+      }
+
+      .hero .carousel-container p {
+        font-size: 0.95rem;
+        line-height: 1.55;
+      }
+
+      .hero .carousel-container .btn-get-started {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+      }
+
+      .section {
+        padding-top: 56px;
+        padding-bottom: 56px;
+      }
+
+      .technologies .col-lg-4 h3,
+      .services .service-item h3,
+      .faq h4 {
+        font-size: 1.12rem;
+      }
+
+      .portfolio .portfolio-info h4 {
+        font-size: 1.02rem;
+      }
+
+      .contact .php-email-form {
+        margin-top: 8px;
+        padding: 18px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      #header .logo .sitename {
+        font-size: 1.45rem;
+      }
+
+      .hero .carousel-container {
+        margin-inline: 6px;
+        padding: 0.75rem 0.55rem;
+      }
+
+      .hero .carousel-container h2 {
+        font-size: 1.4rem;
+      }
+
+      .hero .carousel-container .fs-5 {
+        font-size: 0.95rem !important;
+      }
+
+      .services .service-item {
+        padding: 24px 18px;
+      }
+
+      .services .service-item h3 {
+        font-size: 1.1rem;
+      }
+
+      .contact .info-item {
+        min-height: auto;
+        padding: 18px 14px;
+      }
+
+      .contact .php-email-form {
+        padding: 14px;
+      }
+
+      .contact .php-email-form .form-control {
+        font-size: 0.95rem;
+      }
+
+      .contact .php-email-form button[type="submit"] {
+        width: 100%;
+      }
+
+      .footer .footer-top {
+        text-align: center;
+      }
+    }
+  </style>
+
   <!-- =======================================================
   * Template Name: Multi
   * Template URL: https://bootstrapmade.com/multi-responsive-bootstrap-template/
@@ -299,7 +473,7 @@
               <div class="icon">
                 <i class="bi bi-cart3"></i>
               </div>
-              <a href="#contact" class="stretched-link">
+              <a href="e-commerce-solutions.html" class="stretched-link">
                 <h3>E-Commerce Solutions</h3>
               </a>
               <p>Online stores, catalogs, and checkout flows integrated with payments, inventory, and shipping—tailored
@@ -312,7 +486,7 @@
               <div class="icon">
                 <i class="bi bi-hospital"></i>
               </div>
-              <a href="#contact" class="stretched-link">
+              <a href="hospital-management-systems.html" class="stretched-link">
                 <h3>Hospital Management Systems</h3>
               </a>
               <p>Patient records, appointments, billing, and departmental workflows in one secure system designed for
@@ -325,7 +499,7 @@
               <div class="icon">
                 <i class="bi bi-building"></i>
               </div>
-              <a href="#contact" class="stretched-link">
+              <a href="hostel-rental-management.html" class="stretched-link">
                 <h3>Hostel &amp; Rental Management</h3>
               </a>
               <p>Bookings, leases, maintenance, and tenant or guest management for properties and shared accommodations.
@@ -338,7 +512,7 @@
               <div class="icon">
                 <i class="bi bi-mortarboard"></i>
               </div>
-              <a href="#contact" class="stretched-link">
+              <a href="school-management-systems.html" class="stretched-link">
                 <h3>School Management Systems</h3>
               </a>
               <p>Admissions, classes, attendance, fees, and parent communication—so schools run smoothly day to day.</p>
@@ -350,7 +524,7 @@
               <div class="icon">
                 <i class="bi bi-shop"></i>
               </div>
-              <a href="#contact" class="stretched-link">
+              <a href="point-of-sale-pos.html" class="stretched-link">
                 <h3>Point of Sale (POS)</h3>
               </a>
               <p>Fast checkout, stock control, and reporting for retail counters and branches—online or on-site.</p>
@@ -362,7 +536,7 @@
               <div class="icon">
                 <i class="bi bi-code-slash"></i>
               </div>
-              <a href="#contact" class="stretched-link">
+              <a href="custom-software-development.html" class="stretched-link">
                 <h3>Custom Software Development</h3>
               </a>
               <p>Bespoke applications, integrations, and migrations when off-the-shelf products do not fit your process.
@@ -956,7 +1130,7 @@
 
                 <div class="col-md-12 text-center">
                   <!-- check reult validation -->
-                  <div class="col-md-12">
+                  <div class="math-check mb-3">
                     <label id="mathQuestion"></label>
                     <input type="number" id="mathAnswer" class="form-control" placeholder="Enter answer" required>
                   </div>
@@ -1016,11 +1190,12 @@
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Our Services</h4>
           <ul>
-            <li><a href="#services">E-Commerce</a></li>
-            <li><a href="#services">Hospital systems</a></li>
-            <li><a href="#services">School &amp; hostel</a></li>
-            <li><a href="#services">POS</a></li>
-            <li><a href="#services">Custom software</a></li>
+            <li><a href="e-commerce-solutions.html">E-Commerce</a></li>
+            <li><a href="hospital-management-systems.html">Hospital systems</a></li>
+            <li><a href="school-management-systems.html">School management</a></li>
+            <li><a href="hostel-rental-management.html">Hostel &amp; rental</a></li>
+            <li><a href="point-of-sale-pos.html">POS</a></li>
+            <li><a href="custom-software-development.html">Custom software</a></li>
           </ul>
         </div>
 
